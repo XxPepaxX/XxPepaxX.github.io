@@ -16,7 +16,18 @@
     <center><img src="Gato.png" width="450"></center>
 
 <center><h1>Vete a la verga.</h1></center>
-<button onclick="document.body.style.transform='rotate(360deg)'; document.body.style.transition='2s';">
+    <button
+onmouseover="
+this.style.position='absolute';
+this.style.left=Math.random()*(window.innerWidth-120)+'px';
+this.style.top=Math.random()*(window.innerHeight-60)+'px';
+"
+onclick="
+alert('😈 ¡¿En serio lograste hacer clic?!');
+document.body.style.backgroundColor='black';
+document.body.style.color='white';
+document.body.innerHTML='<h1 style=\'text-align:center;margin-top:100px;\'>😂 JAJAJA, no pudiste escapar 😂</h1><center><img src=\'Gato.png\' width=\'500\'></center>';
+">
     Salir
 </button>
 </body>
