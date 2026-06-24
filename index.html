@@ -4,71 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme</title>
-
-    <style>
-        body{
-            background-color: beige;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-
-        button{
-            font-size:16px;
-            padding:8px 18px;
-            border:none;
-            border-radius:8px;
-            background-color:#d32f2f;
-            color:white;
-            cursor:pointer;
-            transition:0.2s;
-        }
-
-        button:hover{
-            background-color:#b71c1c;
-        }
-    </style>
-</head>
-
-<body>
-
-    <br><br>
-
-    <img src="Gato.png" width="450">
-
-    <h1>Vete a la verga.</h1>
-
     <button id="boton">Salir</button>
 
-    <script>
+<script>
+const boton = document.getElementById("boton");
 
-        const boton = document.getElementById("boton");
-
-        boton.addEventListener("mouseover", function(){
-
-            boton.style.position = "fixed";
-            boton.style.left = Math.random() * (window.innerWidth - 80) + "px";
-            boton.style.top = Math.random() * (window.innerHeight - 40) + "px";
-
-        });
-
-        boton.addEventListener("click", function(){
-
-            alert("¡¿En serio lograste hacer clic?!");
-
-            document.body.style.backgroundColor = "black";
-            document.body.style.color = "white";
-
-            document.body.innerHTML = `
-                <h1 style="margin-top:100px;">
-                    😂 JAJAJA, no pudiste escapar 😂
-                </h1>
-
-                <img src="Gato.png" width="500">
-            `;
-
-        });
-
-    </script>
+boton.onmouseover = function () {
+    boton.style.position = "fixed";
+    boton.style.left = Math.random() * (window.innerWidth - boton.offsetWidth) + "px";
+    boton.style.top = Math.random() * (window.innerHeight - boton.offsetHeight) + "px";
+};
+</script>
 
 </body>
 </html>
