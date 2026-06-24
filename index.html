@@ -16,11 +16,14 @@
     <center><img src="Gato.png" width="450"></center>
 
 <center><h1>Vete a la verga.</h1></center>
-    <button
+ <button
+style="display:block; margin:40px auto; font-size:25px; padding:15px 40px;"
 onmouseover="
 this.style.position='absolute';
 this.style.left=Math.random()*(window.innerWidth-120)+'px';
 this.style.top=Math.random()*(window.innerHeight-60)+'px';
+let textos=['No 😝','Casi 😂','Atrápame 😎','Muy lento 🐢','XD','Ni de broma 😈'];
+this.innerHTML=textos[Math.floor(Math.random()*textos.length)];
 "
 onclick="
 alert('😈 ¡¿En serio lograste hacer clic?!');
