@@ -24,13 +24,52 @@
 </center>
 
 <script>
-const boton = document.getElementById("boton");
+boton.addEventListener("click", function () {
 
-boton.onmouseover = function () {
-    boton.style.position = "fixed";
-    boton.style.left = Math.random() * (window.innerWidth - boton.offsetWidth) + "px";
-    boton.style.top = Math.random() * (window.innerHeight - boton.offsetHeight) + "px";
-};
+    document.body.innerHTML = `
+    <div id="apagando">
+        <h1>Windows se está apagando...</h1>
+        <h2>No apagues tu computadora.</h2>
+        <p>Instalando actualizaciones 100%</p>
+        <br><br>
+        <div class="circulo"></div>
+    </div>
+    `;
+
+    document.body.style.margin = "0";
+    document.body.style.background = "#0078D7";
+    document.body.style.color = "white";
+    document.body.style.fontFamily = "Segoe UI";
+    document.body.style.display = "flex";
+    document.body.style.justifyContent = "center";
+    document.body.style.alignItems = "center";
+    document.body.style.height = "100vh";
+
+    const estilo = document.createElement("style");
+    estilo.innerHTML = `
+        #apagando{
+            text-align:center;
+        }
+
+        .circulo{
+            width:50px;
+            height:50px;
+            border:6px solid rgba(255,255,255,.3);
+            border-top:6px solid white;
+            border-radius:50%;
+            margin:auto;
+            animation:girar 1s linear infinite;
+        }
+
+        @keyframes girar{
+            from{transform:rotate(0deg);}
+            to{transform:rotate(360deg);}
+        }
+    `;
+
+    document.head.appendChild(estilo);
+
+});
 </script>
 
 </body>
