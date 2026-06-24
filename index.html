@@ -45,31 +45,20 @@
 
         boton.addEventListener("mouseover", function(){
 
-            const textos = [
-                "Salir",
-                "Casi 😂",
-                "No 😝",
-                "XD",
-                "Muy lento 🐢",
-                "Atrápame 😎"
-            ];
-
-            boton.innerHTML = textos[Math.floor(Math.random()*textos.length)];
-
-            boton.style.position="fixed";
-            boton.style.left=Math.random()*(window.innerWidth-80)+"px";
-            boton.style.top=Math.random()*(window.innerHeight-40)+"px";
+            boton.style.position = "fixed";
+            boton.style.left = Math.random() * (window.innerWidth - 80) + "px";
+            boton.style.top = Math.random() * (window.innerHeight - 40) + "px";
 
         });
 
         boton.addEventListener("click", function(){
 
-            alert("😈 ¡¿En serio lograste hacer clic?!");
+            alert("¡¿En serio lograste hacer clic?!");
 
-            document.body.style.backgroundColor="black";
-            document.body.style.color="white";
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
 
-            document.body.innerHTML=`
+            document.body.innerHTML = `
                 <h1 style="margin-top:100px;">
                     😂 JAJAJA, no pudiste escapar 😂
                 </h1>
