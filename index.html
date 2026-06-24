@@ -1,37 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme</title>
+
     <style>
-        body {
-            background-color: beige
+        body{
+            background-color: beige;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        button{
+            font-size:25px;
+            padding:15px 40px;
+            margin-top:20px;
+            border:none;
+            border-radius:10px;
+            background-color:red;
+            color:white;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background-color:darkred;
         }
     </style>
 </head>
 <body>
-<br>
-<br>
-    <center><img src="Gato.png" width="450"></center>
 
-<center><h1>Vete a la verga.</h1></center>
- <button
-style="display:block; margin:40px auto; font-size:25px; padding:15px 40px;"
-onmouseover="
-this.style.position='absolute';
-this.style.left=Math.random()*(window.innerWidth-120)+'px';
-this.style.top=Math.random()*(window.innerHeight-60)+'px';
-let textos=['No 😝','Casi 😂','Atrápame 😎','Muy lento 🐢','XD','Ni de broma 😈'];
-this.innerHTML=textos[Math.floor(Math.random()*textos.length)];
-"
-onclick="
-alert('😈 ¡¿En serio lograste hacer clic?!');
-document.body.style.backgroundColor='black';
-document.body.style.color='white';
-document.body.innerHTML='<h1 style=\'text-align:center;margin-top:100px;\'>😂 JAJAJA, no pudiste escapar 😂</h1><center><img src=\'Gato.png\' width=\'500\'></center>';
-">
-    Salir
-</button>
+    <br><br>
+
+    <img src="Gato.png" width="450">
+
+    <h1>Vete a la verga.</h1>
+
+    <button id="boton">Salir</button>
+
+    <script>
+        const boton = document.getElementById("boton");
+
+        boton.addEventListener("mouseover", function () {
+
+            const textos = [
+                "No 😝",
+                "Casi 😂",
+                "Atrápame 😎",
+                "Muy lento 🐢",
+                "XD",
+                "Ni de broma 😈"
+            ];
+
+            boton.style.position = "fixed";
+            boton.style.left = Math.random() * (window.innerWidth - 150) + "px";
+            boton.style.top = Math.random() * (window.innerHeight - 70) + "px";
+
+            boton.innerHTML = textos[Math.floor(Math.random() * textos.length)];
+        });
+
+        boton.addEventListener("click", function () {
+            alert("😈 ¡¿En serio lograste hacer clic?!");
+
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+
+            document.body.innerHTML = `
+                <h1 style="margin-top:100px;">
+                    😂 JAJAJA, no pudiste escapar 😂
+                </h1>
+                <img src="Gato.png" width="500">
+            `;
+        });
+    </script>
+
 </body>
 </html>
