@@ -13,21 +13,22 @@
         }
 
         button{
-            font-size:25px;
-            padding:15px 40px;
-            margin-top:20px;
+            font-size:16px;
+            padding:8px 18px;
             border:none;
-            border-radius:10px;
-            background-color:red;
+            border-radius:8px;
+            background-color:#d32f2f;
             color:white;
             cursor:pointer;
+            transition:0.2s;
         }
 
         button:hover{
-            background-color:darkred;
+            background-color:#b71c1c;
         }
     </style>
 </head>
+
 <body>
 
     <br><br>
@@ -39,39 +40,45 @@
     <button id="boton">Salir</button>
 
     <script>
+
         const boton = document.getElementById("boton");
 
-        boton.addEventListener("mouseover", function () {
+        boton.addEventListener("mouseover", function(){
 
             const textos = [
-                "No 😝",
+                "Salir",
                 "Casi 😂",
-                "Atrápame 😎",
-                "Muy lento 🐢",
+                "No 😝",
                 "XD",
-                "Ni de broma 😈"
+                "Muy lento 🐢",
+                "Atrápame 😎"
             ];
 
-            boton.style.position = "fixed";
-            boton.style.left = Math.random() * (window.innerWidth - 150) + "px";
-            boton.style.top = Math.random() * (window.innerHeight - 70) + "px";
+            boton.innerHTML = textos[Math.floor(Math.random()*textos.length)];
 
-            boton.innerHTML = textos[Math.floor(Math.random() * textos.length)];
+            boton.style.position="fixed";
+            boton.style.left=Math.random()*(window.innerWidth-80)+"px";
+            boton.style.top=Math.random()*(window.innerHeight-40)+"px";
+
         });
 
-        boton.addEventListener("click", function () {
+        boton.addEventListener("click", function(){
+
             alert("😈 ¡¿En serio lograste hacer clic?!");
 
-            document.body.style.backgroundColor = "black";
-            document.body.style.color = "white";
+            document.body.style.backgroundColor="black";
+            document.body.style.color="white";
 
-            document.body.innerHTML = `
+            document.body.innerHTML=`
                 <h1 style="margin-top:100px;">
                     😂 JAJAJA, no pudiste escapar 😂
                 </h1>
+
                 <img src="Gato.png" width="500">
             `;
+
         });
+
     </script>
 
 </body>
